@@ -2387,9 +2387,10 @@ namespace 墨智音乐_WPF
             userControl_ALL_Button_Music_PANEL_BUTTOM.Button_Music_Order.Click += Button_Music_Order_Click;
             userControl_ALL_Button_Music_PANEL_BUTTOM.Button_Music_Order.Background = brush_Button_Music_Order_Normal;
 
-            //歌词显示最大化
+            //歌词显示最大化（BUG，数据初始化与UI操作未分离）
             Max_ListView_Krc();
-
+            //显示专辑
+            Open_Song_Image_Tran();
 
             //存储Windows背景图片
             //定义存储缓冲区大小

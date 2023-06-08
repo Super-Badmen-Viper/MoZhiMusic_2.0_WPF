@@ -67,7 +67,7 @@
 
         <!--专辑封面旋转-->
         <Storyboard x:Key="Image_Song_Animation" RepeatBehavior="Forever">
-            <DoubleAnimation Storyboard.TargetName="Image_Song_Rotate" Storyboard.TargetProperty="Angle" BeginTime="00:00:00" Duration="00:01:12" From="0" To="360"/>
+            <DoubleAnimation Storyboard.TargetName="Image_Song_Rotate" Storyboard.TargetProperty="Angle" BeginTime="00:00:00" Duration="00:00:30" From="0" To="360"/>
         </Storyboard>
 
 
@@ -78,7 +78,7 @@
 
     <Grid x:Name="FrmMain_Music" Loaded="Grid_Loaded" >
         <Grid.Background>
-            <ImageBrush x:Name="FrmMain_Music_ImageBrush" ImageSource="歌曲信息资源/歌手图片/歌手图片1/巨浪.jpg" Stretch="Uniform" TileMode="Tile"/>
+            <ImageBrush x:Name="FrmMain_Music_ImageBrush" ImageSource="图片资源/界面图片/夜星余晖下的永恒.jpg" Stretch="Uniform" TileMode="Tile"/>
         </Grid.Background>
 
         
@@ -280,7 +280,7 @@
 
                 <Image x:Name="Image_Song" Margin="4,4,4,4" 
                        ScrollViewer.VerticalScrollBarVisibility="Disabled" Stretch="Fill" 
-                       Source="歌曲信息资源/专辑图片/丑八怪.jpg" 
+                       Source="图片资源/界面图片/唱片5.png" 
                        UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
                        RenderTransformOrigin="0.5,0.5">
                     <Image.RenderTransform>
