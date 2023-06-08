@@ -215,6 +215,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
+    <None Include="bin\Debug\墨智音乐_WPF.exe.config" />
+    <None Include="bin\Debug\资源\歌单列表\我的收藏.ini" />
+    <None Include="bin\Debug\资源\歌单列表\本地音乐.ini" />
+    <None Include="bin\Debug\资源\歌单列表\默认列表.ini" />
+    <None Include="bin\Debug\资源\歌曲信息资源\歌词资源\SING女团 - 寄明月.krc" />
+    <None Include="bin\Debug\资源\歌曲信息资源\歌词资源\林俊杰 - 杀手.krc" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -410,6 +416,18 @@
     <Resource Include="图片资源\界面图片\Max.png" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="bin\Debug\de\" />
+    <Folder Include="bin\Debug\en\" />
+    <Folder Include="bin\Debug\es\" />
+    <Folder Include="bin\Debug\fr\" />
+    <Folder Include="bin\Debug\it\" />
+    <Folder Include="bin\Debug\ja\" />
+    <Folder Include="bin\Debug\ko\" />
+    <Folder Include="bin\Debug\zh-Hans\" />
+    <Folder Include="bin\Debug\zh-Hant\" />
+    <Folder Include="bin\Debug\资源\歌曲信息资源\缩略图\" />
+    <Folder Include="bin\Debug\资源\视频资源\" />
+    <Folder Include="bin\Release\" />
     <Folder Include="Dao_类封装\播放器信息类\" />
     <Folder Include="SampleData\SampleDataSource\" />
     <Folder Include="自定义控件\聊天界面\" />
@@ -454,6 +472,101 @@
   <ItemGroup>
     <Resource Include="图片资源\按键图片\List_播放键_Play_Leave.png" />
     <Resource Include="图片资源\按键图片\List_播放键_Play_Over.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Interop.Shell32.dll" />
+    <Content Include="bin\Debug\Microsoft.Expression.Interactions.dll" />
+    <Content Include="bin\Debug\System.Windows.Interactivity.dll" />
+    <Content Include="bin\Debug\墨智音乐_WPF.exe" />
+    <Content Include="bin\Debug\墨智音乐_WPF.pdb" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_next.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_prev.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_stop.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_style_0.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_style_1.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_style_2.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_vol_0.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\a_vol_1.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\BEFORE_Enter.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\BEFORE_Normal.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_add.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_download.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_fm.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_history.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_like-2.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_like.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_like_1.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_list.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_local.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_play_list_box.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_search.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_select_false.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_select_true.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\c_video.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\List_播放键_Play_Leave.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\List_播放键_Play_Over.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\LOVE_Enter.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\LOVE_Normal.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\NEXT_Enter.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\NEXT_Normal.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\player.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\全屏.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\屏幕截图 2021-08-27 124210.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\播放键_Pause.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\播放键_Play.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\更多.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\歌词.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\评论.png" />
+    <Resource Include="bin\Debug\资源\图片资源\按键图片\返回.png" />
+    <Resource Include="bin\Debug\资源\图片资源\歌曲图片\初学者.jpg" />
+    <Resource Include="bin\Debug\资源\图片资源\歌曲图片\唱片3.png" />
+    <Resource Include="bin\Debug\资源\图片资源\歌曲图片\唱片4.png" />
+    <Resource Include="bin\Debug\资源\图片资源\歌曲图片\缩略图.jpg" />
+    <Resource Include="bin\Debug\资源\图片资源\歌曲图片\薛之谦.jpg" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\Close.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\Max.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\MaxNormal.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\Min.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\Min_1.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\唱片5.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\墨智音乐.png" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\夜星余晖下的永恒.jpg" />
+    <Resource Include="bin\Debug\资源\图片资源\界面图片\登录二维码.png" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\专辑图片\Output\寄明月.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\专辑图片\Output\西界.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片10\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片11\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片12\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片13\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片14\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片15\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片16\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片17\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片18\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片19\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片1\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片1\SING女团.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片1\巨浪.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片1\林俊杰.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片20\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片21\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片22\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片23\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片24\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片2\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片2\SING女团.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片2\林俊杰.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片3\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片3\SING女团.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片3\林俊杰.jpg" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片4\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片5\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片6\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片7\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片8\null.txt" />
+    <Resource Include="bin\Debug\资源\歌曲信息资源\歌手图片\歌手图片9\null.txt" />
+    <Content Include="bin\Debug\资源\歌曲信息资源\歌曲文件\SING女团 - 寄明月.mp3" />
+    <Content Include="bin\Debug\资源\歌曲信息资源\歌曲文件\林俊杰 - 杀手.mp3" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
