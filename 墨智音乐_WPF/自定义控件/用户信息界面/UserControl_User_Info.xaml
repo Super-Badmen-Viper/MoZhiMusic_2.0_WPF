@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="墨智音乐_WPF.自定义控件.用户信息界面.UserControl_User_Info"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义控件.用户信息界面"
+             mc:Ignorable="d" Width="365" Height="240">
+    <Grid>
+        <Grid.Clip>
+            <EllipseGeometry RadiusX="426" RadiusY="338.984" Center="213,169"/>
+        </Grid.Clip>
+        <Border BorderThickness="2" CornerRadius="10,10,10,10" BorderBrush="White" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <Border.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/界面图片/夜星余晖下的永恒.jpg"/>
+            </Border.Background>
+            <TextBlock HorizontalAlignment="Left" Height="19" Margin="78,36,0,0" TextWrapping="Wrap" Text="毒蛇" VerticalAlignment="Top" Width="145" FontSize="14" Foreground="White"/>
+        </Border>
+
+        <Border BorderThickness="2" CornerRadius="10,10,10,10" BorderBrush="White" UseLayoutRounding="True" SnapsToDevicePixels="True" Margin="30,130,30,50" Background="#FF00C0C9"/>
+
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="我的主页" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="5,195,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="消息中心" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="95,195,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="音乐圈" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="185,195,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="退出账号" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="275,195,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="好友：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="5,90,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="关注：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="95,90,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="粉丝：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="185,90,0,0" Height="35" Foreground="White"/>
+        <Button Style="{StaticResource MyButton_Cirlcle_1}" Content="访客：" HorizontalAlignment="Left" VerticalAlignment="Top" Width="85" Margin="275,90,0,0" Height="35" Foreground="White"/>
+        <Image Source="/墨智音乐_WPF;component/歌曲信息资源/专辑图片/七里香.jpg" Stretch="UniformToFill" Margin="20,23,0,167" UseLayoutRounding="True" SnapsToDevicePixels="True" Width="50" VerticalAlignment="Center" HorizontalAlignment="Left" Height="50">
+            <Image.Clip>
+                <EllipseGeometry RadiusX="25" RadiusY="25" Center="25,25"/>
+            </Image.Clip>
+        </Image>
+
+
+
+    </Grid>
+</UserControl>

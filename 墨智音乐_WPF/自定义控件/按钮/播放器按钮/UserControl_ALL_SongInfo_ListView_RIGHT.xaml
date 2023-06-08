@@ -1,0 +1,28 @@
+﻿<UserControl x:Name="UserControl_ListView" x:Class="墨智音乐_WPF.自定义控件.按钮.播放器按钮.UserControl_ALL_SongInfo_ListView_RIGHT"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义控件.按钮.播放器按钮"
+             mc:Ignorable="d" Height="835" Width="365">
+
+    <ListView  Style="{StaticResource Create_ListView_Temp}" x:Name="ListView_Temp_Info" Height="835" Foreground="White" Background="#BF000000" Width="365" MouseDoubleClick="ListView_Temp_Info_MouseDoubleClick" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <ListViewItem  Width="333"  MouseLeftButtonDown="Grid_MainTitle_MouseDown" Foreground="White" Tag="D:\墨智音乐 - KRC\Music_Player_Test(KRC)\WindowsFormsApplication1\bin\Debug\songnew\薛之谦 - 演员.mp3_1">
+            <StackPanel Orientation="Horizontal" VerticalAlignment="Top" Width="auto" HorizontalAlignment="Left">
+                <!--
+                <TextBlock Width="20" Margin="5" VerticalAlignment="Center" Foreground="White" Tag="1">
+                    <TextBlock.Background>
+                        <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/c_like-2.png"/>
+                    </TextBlock.Background> 
+                </TextBlock>
+                -->
+                <TextBlock Text="演员" Margin="10,0" VerticalAlignment="Center" Width="120" TextTrimming="CharacterEllipsis" Foreground="White" FontSize="18" FontStyle="Italic"/>
+                <TextBlock Text="薛之谦" VerticalAlignment="Center" Width="100" Foreground="White" FontSize="18" FontStyle="Italic"/>
+                <TextBlock Text="3:45" Margin="30,0,0,0" HorizontalAlignment="Right" VerticalAlignment="Center" Foreground="White" FontSize="18" FontStyle="Italic"/>
+            </StackPanel>
+        </ListViewItem>
+
+    </ListView>
+
+
+</UserControl>

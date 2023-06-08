@@ -1,0 +1,77 @@
+﻿<UserControl x:Class="墨智音乐_WPF.自定义控件.音频波形图.UserControl_Music_MAV_GDI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义控件.音频波形图"
+             mc:Ignorable="d" Height="160" Width="960">
+    <Grid Margin="0,0,0,0">
+
+        <TextBlock Margin="30,0,920,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="15,45,935,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="0,87,950,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="75,22,875,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="60,65,890,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="45,45,905,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="90,12,860,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="135,0,815,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="120,45,830,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="105,87,845,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="180,22,770,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="165,65,785,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="150,45,800,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="195,12,755,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="240,0,710,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="225,45,725,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="210,87,740,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="285,22,665,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="270,65,680,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="255,45,695,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="300,12,650,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="345,0,605,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="330,45,620,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="315,87,635,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="390,22,560,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="375,65,575,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="360,45,590,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="405,12,545,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="450,0,500,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="435,45,515,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="420,87,530,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="TextBlock_Middle_1_Left"  Margin="495,22,455,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="TextBlock_Middle" Margin="480,65,470,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="TextBlock_Middle_1_Right"  Margin="465,45,485,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="510,12,440,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="555,0,395,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="540,45,410,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="525,87,425,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="600,22,350,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="585,65,365,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="570,45,380,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="615,12,335,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="660,0,290,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="645,45,305,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="630,87,320,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="705,22,245,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="690,65,260,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="675,45,275,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="720,12,230,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="765,0,185,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="750,45,200,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="735,87,215,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="810,22,140,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="795,65,155,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="780,45,170,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="825,12,125,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="870,0,80,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="855,45,95,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="840,87,110,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="915,22,35,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="900,65,50,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="885,45,65,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="930,12,20,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+        <TextBlock Margin="945,87,0,0" TextWrapping="Wrap" Width="10" Background="#C40DD8B3" HorizontalAlignment="Center"/>
+
+
+    </Grid>
+</UserControl>

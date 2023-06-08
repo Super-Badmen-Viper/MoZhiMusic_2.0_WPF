@@ -1,0 +1,428 @@
+﻿<Window xmlns:MV播放界面="clr-namespace:墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面"  
+        xmlns:主界面="clr-namespace:墨智音乐_WPF.自定义页面_XAML.主界面" 
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity" 
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions" 
+    
+        xmlns:播放器按钮="clr-namespace:墨智音乐_WPF.自定义控件.按钮.播放器按钮" 
+        xmlns:音频波形图="clr-namespace:墨智音乐_WPF.自定义控件.音频波形图" 
+        xmlns:界面过渡动画="clr-namespace:墨智音乐_WPF.自定义控件.界面过渡动画" 
+        x:Name="Windows_FrmMain" 
+        x:Class="墨智音乐_WPF.墨智音乐"
+        mc:Ignorable="d"
+        Title="墨智音乐" Height="810" Width="1439.998" 
+        MouseLeftButtonDown="Window_MouseLeftButtonDown" 
+        HorizontalContentAlignment="Center" VerticalContentAlignment="Center" UseLayoutRounding="True" 
+        Foreground="{x:Null}" Closing="Windows_FrmMain_Closing" StateChanged="Windows_FrmMain_StateChanged" 
+        WindowStyle="None" ResizeMode="NoResize"
+        >
+
+    <Window.Resources>
+
+        <!-- ListView平滑滚动效果 -->
+        <Style x:Key="ListBoxStyle1" TargetType="{x:Type ListBox}">
+            <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.WindowBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
+            <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type ListBox}">
+                        <Border x:Name="Bd" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" Padding="1" SnapsToDevicePixels="true">
+                            <ScrollViewer Focusable="false" Padding="{TemplateBinding Padding}">
+                                <ItemsPresenter SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}">
+                                    <i:Interaction.Behaviors>
+                                        <ei:FluidMoveBehavior Duration="00:00:03"/>
+                                    </i:Interaction.Behaviors>
+                                </ItemsPresenter>
+                            </ScrollViewer>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="Bd" Value="{DynamicResource {x:Static SystemColors.ControlBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsGrouping" Value="true">
+                                <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <ItemsPanelTemplate x:Key="ItemsPanelTemplate2">
+            <StackPanel IsItemsHost="False">
+                <i:Interaction.Behaviors>
+                    <ei:FluidMoveBehavior AppliesTo="Children"  Duration="00:00:00:00.2"/>
+                </i:Interaction.Behaviors>
+            </StackPanel>
+        </ItemsPanelTemplate>
+
+
+        <!--专辑封面旋转-->
+        <Storyboard x:Key="Image_Song_Animation" RepeatBehavior="Forever">
+            <DoubleAnimation Storyboard.TargetName="Image_Song_Rotate" Storyboard.TargetProperty="Angle" BeginTime="00:00:00" Duration="00:01:12" From="0" To="360"/>
+        </Storyboard>
+
+
+    </Window.Resources>
+    <Window.Background>
+        <ImageBrush x:Name="Windows_FrmMain_ImageBrush" Stretch="Uniform"/>
+    </Window.Background>
+
+    <Grid x:Name="FrmMain_Music" Loaded="Grid_Loaded" >
+        <Grid.Background>
+            <ImageBrush x:Name="FrmMain_Music_ImageBrush" ImageSource="歌曲信息资源/歌手图片/歌手图片1/巨浪.jpg" Stretch="Uniform" TileMode="Tile"/>
+        </Grid.Background>
+
+        
+        <Grid x:Name="Grid_Music_Player" Visibility="Visible" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            
+            <!--黑色半透明背景色，使歌词文本更清晰-->
+            <TextBlock x:Name="Singer_BackGround_Change_Temp" TextWrapping="Wrap" Text="TextBlock" Background="#38000000" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+
+            <!--歌词列表（行同步）-->
+            <ListView 
+                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                ItemsPanel="{DynamicResource ItemsPanelTemplate2}" x:Name="ListView_Temp_KRC" Background="{x:Null}" BorderBrush="{x:Null}" 
+                      Foreground="White" FontSize="16" FontWeight="Medium"
+                      Loaded="ListView_Temp_KRC_Loaded"
+                      ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                      Margin="585,196,92,170" BorderThickness="0" IsSynchronizedWithCurrentItem="False" Focusable="False" 
+                      IsTextSearchEnabled="False" HorizontalContentAlignment="Center" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" 
+                      Width="763" ClipToBounds="True" VerticalAlignment="Center" 
+                      Height="444" TextOptions.TextFormattingMode="Display" TextOptions.TextHintingMode="Fixed"
+                      >
+
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+
+                    <!--ListViewItem的选中透明样式-->
+                    <Style  TargetType="{x:Type ListViewItem}">
+
+                        <!-- 边框大小 -->
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <!-- 边框颜色 -->
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <!-- text居中 -->
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <!-- 行高 -->
+                        <Setter Property="Height" Value="33"/>
+
+                        <Setter Property="SnapsToDevicePixels" Value="True"/>
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate TargetType="{x:Type ListViewItem}">
+                                    <Border x:Name="bd"  
+                                            BorderThickness="0"  
+                                            SnapsToDevicePixels="True">
+                                        <GridViewRowPresenter HorizontalAlignment="Center" Height="43" />
+                                    </Border>
+                                    <ControlTemplate.Triggers>
+                                        <Trigger Property="IsSelected" Value="True">
+                                            <Setter Property="FontSize" Value="23"/>
+                                            <Setter Property="TextOptions.TextFormattingMode" Value="Display"/>
+                                            <Setter Property="TextOptions.TextHintingMode" Value="Fixed"/>
+                                            <Setter Property="VerticalContentAlignment" Value="Stretch"/>
+                                            <!-- 行高 -->
+                                            <Setter Property="Height" Value="88"/>
+                                        </Trigger>
+
+                                    </ControlTemplate.Triggers>
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </Style>
+                </ListView.Resources>
+
+                <ListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn Width="800" x:Name="ListView_Temp_KRC_GridViewColumn">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Song_KRC_Line}" HorizontalAlignment="Center">
+                                        <TextBlock.Triggers>
+                                            <EventTrigger RoutedEvent="UIElement.MouseLeftButtonDown">
+                                                <!--占用属性，没有用处但是必须得有，不然报参数缺失-->
+                                                <!--事件绑定，触发一次就重置执行一次-->
+                                                <BeginStoryboard>
+                                                    <Storyboard x:Name="Text_Storyboard">
+                                                        <DoubleAnimation x:Name="Text_DoubleAnimation"
+                                             From="-0.5" To="0.5" Duration="0:0:4"
+                                             Storyboard.TargetName="Trans" Storyboard.TargetProperty="X"/>
+                                                    </Storyboard>
+                                                </BeginStoryboard>
+                                            </EventTrigger>
+                                        </TextBlock.Triggers>
+                                        <TextBlock.Foreground>
+                                            <LinearGradientBrush EndPoint="1,0" StartPoint="0,0">
+                                                <LinearGradientBrush.RelativeTransform>
+                                                    <TranslateTransform X="-0.5" x:Name="Trans"/>
+                                                </LinearGradientBrush.RelativeTransform>
+                                                <GradientStop Color="#FF00FFA2" Offset="0.49"/>
+                                                <GradientStop Color="White" Offset="0.51"/>
+                                            </LinearGradientBrush>
+                                        </TextBlock.Foreground>
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+            </ListView>
+
+
+
+
+
+
+
+            <!-- 掩盖ListViewKRC,形成不同层次 -->
+            <TextBox x:Name="TextBox_ListViewKRC_Up" Height="444" Margin="0,196,92,170" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Center" Width="763" BorderBrush="{x:Null}" Background="{x:Null}" SelectionBrush="{x:Null}" Foreground="{x:Null}" HorizontalAlignment="Right" UseLayoutRounding="True" SnapsToDevicePixels="True">
+                <TextBox.Style>
+                    <Style TargetType="{x:Type TextBox}">
+                        <!-- 边框大小 -->
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <!-- 边框颜色 -->
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                    </Style>
+                </TextBox.Style>
+            </TextBox>
+            <ListView 
+                UseLayoutRounding="True" SnapsToDevicePixels="True" 
+                RenderOptions.BitmapScalingMode="HighQuality"                
+                Visibility="Visible" x:Name="ListView_Temp_KRC_Temp" Background="{x:Null}" 
+                BorderBrush="{x:Null}" Foreground="White" FontSize="16" FontWeight="Medium"
+                Loaded="ListView_Temp_KRC_Loaded"
+                      ScrollViewer.VerticalScrollBarVisibility="Disabled" ScrollViewer.HorizontalScrollBarVisibility="Hidden" Margin="585,196,92,170" BorderThickness="0" IsSynchronizedWithCurrentItem="False" Focusable="False" IsTextSearchEnabled="False" HorizontalContentAlignment="Center" MouseDoubleClick="ListView_Temp_KRC_Temp_MouseDoubleClick" VerticalContentAlignment="Stretch" HorizontalAlignment="Center" Width="763" VerticalAlignment="Center" Height="444">
+
+                <ListView.Resources>
+                    <Style TargetType="{x:Type GridViewColumnHeader}">
+                        <Setter Property="Visibility" Value="Collapsed"/>
+                    </Style>
+                    <Style TargetType="{x:Type Border}">
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <Setter Property="BorderThickness" Value="0"/>
+                    </Style>
+                </ListView.Resources>
+                <ListView.View>
+                    <GridView AllowsColumnReorder="True">
+                        <GridViewColumn Width="800" x:Name="ListView_Temp_KRC_Temp_GridViewColumn">
+
+
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding Song_KRC_Line}" HorizontalAlignment="Center">
+                                        <TextBlock.Effect>
+                                            <DropShadowEffect Color="Black" BlurRadius="4" ShadowDepth="1" Opacity="1" />
+                                        </TextBlock.Effect>
+                                    </TextBlock>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+
+
+                        </GridViewColumn>
+                    </GridView>
+                </ListView.View>
+
+                <ListView.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListViewItem}">
+
+                        <!-- 边框大小 -->
+                        <Setter Property="BorderThickness" Value="0"/>
+                        <!-- 边框颜色 -->
+                        <Setter Property="BorderBrush" Value="Transparent"/>
+                        <!-- text居中 -->
+                        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                        <!-- 行高 -->
+                        <Setter Property="Height" Value="33"/>
+
+                        <Style.Triggers>
+                            <Trigger Property="IsSelected" Value="True">
+                                <Setter Property="Foreground" Value="#FF17EAA7"/>
+                                <Setter Property="FontSize" Value="22"/>
+
+                                <Setter Property="Background" Value="Transparent"/>
+                                <Setter Property="BorderBrush" Value="Transparent"/>
+                                <Setter Property="BorderThickness" Value="0"/>
+                            </Trigger>
+
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Panel.Background" Value="Transparent"/>
+                            </Trigger>
+                        </Style.Triggers>
+
+                    </Style>
+                </ListView.ItemContainerStyle>
+
+            </ListView>
+
+            <StackPanel x:Name="Panel_Image" Height="300" Width="300" RenderTransformOrigin="0.5,0.5" Margin="0,0,666,0" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" UseLayoutRounding="True" SnapsToDevicePixels="True" >
+                <StackPanel.Background>
+                    <ImageBrush ImageSource="图片资源/歌曲图片/唱片3.png" Stretch="UniformToFill"/>
+                </StackPanel.Background>
+
+                <Image x:Name="Image_Song" Margin="4,4,4,4" 
+                       ScrollViewer.VerticalScrollBarVisibility="Disabled" Stretch="Fill" 
+                       Source="歌曲信息资源/专辑图片/丑八怪.jpg" 
+                       UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                       RenderTransformOrigin="0.5,0.5">
+                    <Image.RenderTransform>
+                        <RotateTransform x:Name="Image_Song_Rotate"/>
+                    </Image.RenderTransform>
+                    <Image.Clip>
+                        <EllipseGeometry RadiusX="146" RadiusY="146" Center="146,146"/>
+                    </Image.Clip>
+                </Image>
+
+
+            </StackPanel>
+
+
+
+            <TextBlock x:Name="TextBox_SongListName"   Block.TextAlignment="Center" VerticalAlignment="Center"  Margin="480,124,480,666" TextWrapping="Wrap"  Width="480" Text="墨智音乐" FontWeight="Bold" TextAlignment="Justify" TextOptions.TextFormattingMode="Display"  FontSize="14" Foreground="#FFEAEAEA"  Focusable="False" UseLayoutRounding="True" SnapsToDevicePixels="True" HorizontalAlignment="Center" />
+            <TextBlock x:Name="TextBox_SongName"  Block.TextAlignment="Center" VerticalAlignment="Center"  Margin="480,60,480,724" TextWrapping="Wrap"  Width="480" Text="墨智音乐" FontWeight="Bold" TextAlignment="Justify" TextOptions.TextFormattingMode="Display"  FontSize="20" Foreground="White"  Focusable="False" UseLayoutRounding="True" SnapsToDevicePixels="True" HorizontalAlignment="Center" />
+            <TextBlock x:Name="TextBox_SingerName"  Block.TextAlignment="Center" VerticalAlignment="Center"  Margin="480,97,480,693" TextWrapping="Wrap"  Width="480" Text="墨智音乐" FontWeight="Bold" TextAlignment="Justify" TextOptions.TextFormattingMode="Display"  FontSize="14" Foreground="#FFEAEAEA"  Focusable="False" UseLayoutRounding="True" SnapsToDevicePixels="True" HorizontalAlignment="Center" />
+
+
+
+
+
+        </Grid>
+
+
+        <Grid x:Name="Grid_主界面_FrmMain" Loaded="Grid_主界面_FrmMain_Loaded" Visibility="Hidden">
+            <主界面:UserControl_主界面_FrmMain 
+                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                x:Name="userControl_主界面_FrmMain" Width="Auto" ScrollViewer.VerticalScrollBarVisibility="Disabled" Margin="0,108,0,70" Background="#88292929"/>
+
+            
+            <TabControl 
+                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                Background="{x:Null}" Margin="177,85,0,70">
+                <TabItem Header="歌单"/>
+                <TabItem Header="音乐">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_Music.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="视频">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_Video.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="K歌">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_TalkSong.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="直播">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_Live.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="听书">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_ListenBook.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+                <TabItem Header="探索">
+                    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
+                        <Frame Source="自定义Page分页信息/Page_Find.xaml" NavigationUIVisibility="Hidden"/>
+                    </ScrollViewer>
+                </TabItem>
+
+                <!--this.objPage.Source = 
+
+Nnew Uri(@"/ComplexAccidentsManage;component/Views/sgqkkz.xaml", UriKind.Relative);-->
+            </TabControl>
+
+            <Grid x:Name="Grid_MV" Visibility="Hidden" Margin="218,108,0,80">
+                <MV播放界面:UserControl_MV 
+                    UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                    x:Name="userControl_MV" Loaded="UserControl_MV_Loaded" Margin="2,0,70,54" />
+            </Grid>
+
+        </Grid>
+
+
+        <Grid x:Name="Grid_ALways_TOP_UserControl" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <!-- 播放列表 -->
+            <ListView 
+                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                Style="{StaticResource Create_ListView_Temp}" x:Name="ListView_Temp_Info" Foreground="White" Background="#8C000000" Width="441" HorizontalAlignment="Right" Margin="0,45,0,94" Loaded="dataGridView_List_ALL_Loaded" MouseDoubleClick="ListView_Temp_Info_MouseDoubleClick">
+                <ListView.View>
+                    <GridView>
+
+                        <!--设置行高-->
+                        <!--              
+                        <GridViewColumn Width="0">
+                            <GridViewColumn.Header>
+                                <TextBlock></TextBlock>
+                            </GridViewColumn.Header>
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <Image Height="55"></Image>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+                        -->
+                        <GridViewColumn x:Name="GridViewColumn_Check_ListView_Song">
+                            <GridViewColumn.CellTemplate>
+                                <DataTemplate>
+                                    <CheckBox x:Name="Check_ListView_Song" Tag="{Binding Song_No}" Click="Check_ListView_Song_Click"/>
+                                </DataTemplate>
+                            </GridViewColumn.CellTemplate>
+                        </GridViewColumn>
+
+                        <GridViewColumn DisplayMemberBinding="{Binding Song_Name}" Header="歌曲名"
+                                        Width="222"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Singer_Name}" Header="歌手名"
+                                        Width="60"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Album_Name}" Header="专辑"
+                                        Width="90"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Song_Url}" Header="歌曲路径"
+                                        Width="120"/>
+                        <GridViewColumn DisplayMemberBinding="{Binding Song_No}" Header="歌曲序号"
+                                        Width="120"/>
+                    </GridView>
+                </ListView.View>
+            </ListView>
+            <ListBox
+                UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+                x:Name="ListBox_Select_ListView" HorizontalAlignment="Right" Margin="0,561,0,96" Width="260" Background="#8C000000" Foreground="White" FontSize="16" MouseDoubleClick="ListBox_Select_ListView_MouseDoubleClick"/>
+        </Grid>
+
+        <播放器按钮:UserControl_Voice_Music_Speed x:Name="userControl_Voice_Music_Speed" HorizontalAlignment="Right" Height="81" Margin="0,0,10,106" VerticalAlignment="Bottom" Width="406" Loaded="userControl_Voice_Music_Speed_Loaded" Background="#5B000000" UseLayoutRounding="True" SnapsToDevicePixels="True"/>
+        <播放器按钮:UserControl_ALL_Button_Music_PANEL_BUTTOM
+            UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+            x:Name="userControl_ALL_Button_Music_PANEL_BUTTOM" Height="66" VerticalAlignment="Bottom" Width="Auto" Loaded="userControl_ALL_Button_Music_PANEL_BUTTOM_Loaded" Background="#A8000000"/>
+        <播放器按钮:UserControl_ALL_Button_Music_PANEL_TOP
+            UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+            x:Name="userControl_ALL_Button_Music_PANEL_TOP" Height="30" VerticalAlignment="Top" Width="Auto" Loaded="UserControl_Top_Loaded" Background="#70000000"/>
+
+
+        <音频波形图:UserControl_Music_MAV_GDI x:Name="userControl_Music_MAV_GDI" VerticalAlignment="Bottom" Margin="6,0,6,92" Visibility="Hidden"/>
+
+
+
+
+
+    </Grid>
+</Window>

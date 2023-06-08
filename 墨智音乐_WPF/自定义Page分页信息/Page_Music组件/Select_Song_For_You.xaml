@@ -1,0 +1,43 @@
+﻿<UserControl x:Class="墨智音乐_WPF.自定义Page分页信息.Page_Music组件.Select_Song_For_You"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义Page分页信息.Page_Music组件"
+             mc:Ignorable="d" 
+             Width="280" Height="80">
+    <Grid Width="80" Height="80" HorizontalAlignment="Left">
+        <Grid.Clip>
+            <EllipseGeometry RadiusX="426" RadiusY="338.984" Center="213,169"/>
+        </Grid.Clip>
+
+        <StackPanel x:Name="Song_Like_Image"/>
+
+        <Border x:Name="This_BackGround_To_Border" BorderThickness="1" CornerRadius="10,10,10,10" BorderBrush="#00000000" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <Border.Background>
+                <!--/墨智音乐_WPF;component/歌曲信息资源/专辑图片/八度空间.jpg-->
+                <ImageBrush ImageSource="{Binding ToDay_Song_Image}" Stretch="UniformToFill"/>
+            </Border.Background>
+        </Border>
+       
+        <StackPanel x:Name="StackPanel_Move_Black" MouseLeave="This_Xaml_BackGround_MouseLeave" MouseMove="This_Xaml_BackGround_MouseMove" Background="#00000000" >
+
+        </StackPanel>
+        <Image x:Name="Image_Play_This_SongList" 
+               Source="/墨智音乐_WPF;component/图片资源/按键图片/List_播放键_Play_Leave.png" 
+               Stretch="Fill" Margin="25" 
+               UseLayoutRounding="True" SnapsToDevicePixels="True" RenderOptions.BitmapScalingMode="HighQuality"
+               MouseLeave="This_Image_BackGround_MouseLeave" MouseMove="This_Image_BackGround_MouseMove" Width="30" Height="30" ClipToBounds="True">
+            <Image.Clip>
+                <EllipseGeometry RadiusX="15" RadiusY="15" Center="15,15"/>
+            </Image.Clip>
+        </Image>
+
+
+        <Grid Width="200" Margin="80,0,-199,0">
+            <TextBlock x:Name="Select_Song_For_You_SongName" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23.24" Width="190" FontSize="18" Margin="10,10.5,-80,0"/>
+            <TextBlock x:Name="Select_Song_For_You_SingerName" TextWrapping="Wrap" Text="TextBlock" HorizontalAlignment="Left" VerticalAlignment="Top" Height="23.24" Width="190" FontSize="15" Foreground="#FF666666" Margin="10,37.5,-80,0"/>
+        </Grid>
+    </Grid>
+
+</UserControl>

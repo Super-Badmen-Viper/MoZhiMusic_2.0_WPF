@@ -1,0 +1,30 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面"
+             xmlns:MV操作界面="clr-namespace:墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面.MV操作界面" x:Class="墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面.UserControl_MV"
+             mc:Ignorable="d" Width="1150" Height="555" Background="#8C323030">
+    <Grid>
+        <Button HorizontalAlignment="Left" VerticalAlignment="Top" Width="80" Height="40" Content="退出" FontSize="20" FontWeight="Bold" Click="Button_Click"/>
+
+        <MediaElement x:Name="MediaMent_MV" LoadedBehavior="Manual" UnloadedBehavior="Manual" Margin="197,-2,196,68" Height="489" VerticalAlignment="Bottom" Width="764"/>
+        <TextBlock x:Name="userControl_MV_Take_TextBlock" Margin="193,0,193,68" Height="62" VerticalAlignment="Bottom" ></TextBlock>
+        <MV操作界面:UserControl_MV_Take x:Name="userControl_MV_Take" Height="62" VerticalAlignment="Bottom" Margin="197,0,196,70"/>
+
+        <StackPanel x:Name="StackPanel_Voice" Visibility="Visible" Margin="0,0,263,187" Background="#55000000" HorizontalAlignment="Right" VerticalAlignment="Bottom" Height="212" Width="39">
+            <TextBlock x:Name="Voice_Nums" Margin="10,0,0,495" TextWrapping="Wrap" Text="50" RenderTransformOrigin="1.46,0.333" Height="17" Foreground="White" FontStyle="Italic"/>
+            <Slider IsMoveToPointEnabled="True" Cursor="Hand"  x:Name="Slider_Voice" Style="{DynamicResource SliderStyle1}" Margin="-68,-788,-68,0" Height="22" Background="#BFFFFFFF" RenderTransformOrigin="0.5,0.5">
+                <Slider.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform Angle="-90"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Slider.RenderTransform>
+            </Slider>
+        </StackPanel>
+    </Grid>
+</UserControl>

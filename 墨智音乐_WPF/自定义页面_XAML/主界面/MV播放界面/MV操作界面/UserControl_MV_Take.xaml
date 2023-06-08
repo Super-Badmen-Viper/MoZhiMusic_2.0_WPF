@@ -1,0 +1,42 @@
+﻿<UserControl x:Class="墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面.MV操作界面.UserControl_MV_Take"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:墨智音乐_WPF.自定义页面_XAML.主界面.MV播放界面.MV操作界面"
+             mc:Ignorable="d" Width="750" Height="59.85">
+    <Grid>
+
+        <Slider x:Name="Silder_Music_Width" Height="8" Margin="0,-2,0,-6" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" UseLayoutRounding="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource SliderStyle1}" IsMoveToPointEnabled="True" Cursor="Hand" Background="#BF444444" Focusable="False" SnapsToDevicePixels="True" />
+        <Slider x:Name="Silder_Music_Temp_Width" Height="8" Margin="0,-2,0,-6" VerticalAlignment="Top" HorizontalContentAlignment="Stretch" UseLayoutRounding="True" ScrollViewer.VerticalScrollBarVisibility="Disabled" Style="{DynamicResource SliderStyle2}" IsMoveToPointEnabled="True" Cursor="Hand"  Visibility="Hidden" BorderBrush="{x:Null}"/>
+
+        <Button Style="{StaticResource MyButton}" x:Name="Button_Play_Pause_Player" Content="" Height="25" Margin="46,20,0,15" Width="25" BorderBrush="{x:Null}" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <Button.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/播放键_Play.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource MyButton}" x:Name="Button_Before" Content="" Height="25" Margin="11,20,0,15" Width="25" BorderBrush="{x:Null}" UseLayoutRounding="True"  RenderTransformOrigin="-5.75,0.5" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True" Cursor="Hand">
+            <Button.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/BEFORE_Normal.png"/>
+            </Button.Background>
+        </Button>
+        <Button Style="{StaticResource MyButton}" x:Name="Button_Next" Content="" Height="25" Margin="80,20,0,15" Width="25" BorderBrush="{x:Null}" UseLayoutRounding="True" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" HorizontalAlignment="Left" VerticalAlignment="Center" SnapsToDevicePixels="True">
+            <Button.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/NEXT_Normal.png"/>
+            </Button.Background>
+        </Button>
+        <TextBox x:Name="TextBox_Song_Time" HorizontalAlignment="Left" Height="20" Margin="180,20,0,17" TextWrapping="Wrap" VerticalAlignment="Center" Width="120" Background="{x:Null}" SelectionBrush="{x:Null}" BorderBrush="{x:Null}" Foreground="White" HorizontalContentAlignment="Right" FontSize="16" Text="00:00/00:00" BorderThickness="0" Focusable="False" SnapsToDevicePixels="True" UseLayoutRounding="True"/>
+        <Button x:Name="Button_Music_Voice_Speed" Style="{StaticResource MyButton}" Content="" HorizontalAlignment="Right" Height="20" Margin="0,20,80,20" VerticalAlignment="Center" Width="20" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,1" Foreground="{x:Null}" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <Button.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/a_vol_0.png"/>
+            </Button.Background>
+        </Button>
+        <Button x:Name="Button_Screen" Style="{StaticResource MyButton}" Content="" HorizontalAlignment="Right" Height="20" Margin="0,20,40,20" VerticalAlignment="Center" Width="20" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,1" Foreground="{x:Null}" UseLayoutRounding="True" SnapsToDevicePixels="True">
+            <Button.Background>
+                <ImageBrush ImageSource="/墨智音乐_WPF;component/图片资源/按键图片/全屏.png"/>
+            </Button.Background>
+        </Button>
+
+
+    </Grid>
+</UserControl>
